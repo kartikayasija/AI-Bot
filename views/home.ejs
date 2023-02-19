@@ -1,0 +1,13 @@
+<%-include("partials/header.ejs")%>
+
+<div class="body">
+	<h1>GPT</h1>
+	<div class="wrapper">
+        <form action="/openai/codecompletion" method="post">
+            <input name="prompt" class="search" type="text" id="search" />
+            <button class="submit" name="submit"><i class="fa fa-search"></i></button>
+        </form>
+	</div>
+</div>
+
+<%-include("partials/footer.ejs")%>

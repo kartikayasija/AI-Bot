@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot Javascript </title>
+    <link rel="stylesheet" href="/css/style2.css" />
+</head>
+
+<body>
+    <body background="https://png.pngtree.com/background/20210709/original/pngtree-yellow-tourism-trolley-case-to-chat-with-picture-image_925124.jpg"></body>
+    <div class="glass">
+        <h1>Ask Your Question??</h1>
+        <h2>Yeah,ask Some Question</h2>
+        <div class="input">
+            <form action="/openai/codecompletion" method="post">
+                <input type="text" id="userBox" name="prompt" onkeydown="if(event.keyCode == 13){ talk()}"
+                placeholder="Type your Question" />
+                <button type="submit">Search</button>
+            </form>
+            
+        </div>
+        <p id="chatLog"><%=response%></p>
+    </div>
+</body>
+
+</html>
