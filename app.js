@@ -17,25 +17,22 @@ const openai = new OpenAIApi(configuration);
 app.get("/",function(req,res){
   res.render("new.ejs",{response: ""});
 })
-app.get("/openai/codecompletion",function(req,res){
-  res.redirect("/");
-})
-app.post("/openai/codecompletion",async function(req,res){
+app.post("/",async function(req,res){
   try {
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: req.body.prompt,
-      max_tokens: 200,
+      max_tokens: 1024,
       n: 1,
       // stop: none,
       temperature: 0.9,
     });
-    console.log(response.data.choices[0].text)
+    // console.log(response.data.choices[0].text)
     res.render("new.ejs",{response: response.data.choices[0].text});
   } catch (error) {
     if(error.response){
       console.log(error.response.status);
-      console.log(error.response.data)
+      console.log(error.response.data);
     }else{
       console.log(error.message);
     }

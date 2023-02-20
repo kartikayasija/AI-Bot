@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chatbot Javascript </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style2.css" />
 </head>
 
 <body>
-    <body background="https://png.pngtree.com/background/20210709/original/pngtree-yellow-tourism-trolley-case-to-chat-with-picture-image_925124.jpg"></body>
+    <body background="https://thumbs.dreamstime.com/z/chatbot-ai-artificial-intelligence-robotic-concept-cute-vintage-look-plastic-robot-vivid-yellow-background-139130636.jpg"></body>
     <div class="glass">
         <h1>Ask Your Question??</h1>
         <h2>Yeah,ask Some Question</h2>
         <div class="input">
-            <form action="/openai/codecompletion" method="post">
+            <form action="/" method="post">
                 <input type="text" id="userBox" name="prompt" onkeydown="if(event.keyCode == 13){ talk()}"
                 placeholder="Type your Question" />
                 <button type="submit">Search</button>
             </form>
             
         </div>
-        <p id="chatLog"><%=response%></p>
+        <!-- <p id="chatLog"><%=response%></p> -->
+
+        
+    </div>
+    <div class="d-flex justify-content-center">
+        <form style="width: 60%;">
+          <textarea disabled class="alert alert-primary glass3" name="ai-response" rows="10" cols="80"><%=response%></textarea><br><br>
+        </form>
     </div>
 </body>
 
