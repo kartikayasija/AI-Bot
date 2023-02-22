@@ -66,8 +66,6 @@ passport.use(new GoogleStrategy({
   callbackURL: "http://localhost:3000/auth/google/chat"
 },
 function(accessToken, refreshToken, profile, cb) {
-  console.log(profile.id.displayName);
-
   User.findOrCreate({username: profile.id,googleId: profile.id,name: profile.displayName}, function (err, user) {
     return cb(err, user);
   });
@@ -158,7 +156,7 @@ app.post("/", async function (req, res) {
         temperature: 0.9,
       });
       // console.log(response.data.choices[0].text)
-      res.render("new.ejs", { response: response.data.choices[0].text, name: req.user.name });
+      res.render("chat.ejs", { response: response.data.choices[0].text, name: req.user.name });
     } catch (error) {
       if (error.response) {
         console.log(error.response.status);
