@@ -1,0 +1,40 @@
+<%-include("partials/header.ejs")%>
+
+
+<div class="box-form">
+    <div class="left">
+        <div class="overlay">
+            <h1>Hello World.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Curabitur et est sed felis aliquet sollicitudin</p>
+            <span>
+                <p>login with social media</p>
+                <a href="/register" style="text-decoration: none;"> Create Account</a>
+                <a href="/auth/google" style="text-decoration: none;"><i class="fa-brands fa-google fa-sm" ></i> Login with Google</a>
+
+            </span>
+        </div>
+    </div>
+
+
+    <div class="right">
+        <br><br>
+        <h5>Login</h5>
+        <br><br><br>
+        <p>Don't have an account? <a href="/register">Creat Your Account</a> it takes less than a minute</p>
+        <div class="inputs">
+            <form action="/login" method="post">
+                <input type="text" placeholder="user name" name="username">
+                <br>
+                <input type="password" placeholder="password" name="password">
+                <br><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+<%-include("partials/footer.ejs")%>

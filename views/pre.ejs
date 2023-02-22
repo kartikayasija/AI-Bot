@@ -12,21 +12,14 @@
     <h2>Hi! <%=name%> ,ask Some Question</h2>
     <div class="input">
         <form action="/" method="post">
-            <input type="text" id="userBox" name="prompt" onkeydown="if(event.keyCode == 13){ talk()}"
+            <input type="text" id="userBox" name="prompt"
                 placeholder="Type your Question" />
             <button type="submit">Search</button>
         </form>
 
     </div>
-    <!-- <p id="chatLog"><%=response%></p> -->
 
 
-</div>
-<div class="d-flex justify-content-center">
-    <form style="width: 60%;">
-        <textarea disabled class="alert alert-primary glass3 glow" name="ai-response" rows="10"
-            cols="80"><%=response%></textarea><br><br>
-    </form>
 </div>
 
 <%-include("partials/footer.ejs")%>

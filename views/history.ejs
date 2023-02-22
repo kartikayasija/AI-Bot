@@ -1,0 +1,14 @@
+<%-include("partials/header.ejs") %>
+
+<div class="d-flex justify-content-center">
+    <form style="width: 60%;">
+        <textarea disabled class="alert alert-primary glass3" name="ai-response" rows="10" cols="80">
+           <% send.forEach(function(x){ %>
+                <%= x %>
+           <% }) %>
+        </textarea>
+    </form>
+</div>
+
+
+<%-include("partials/footer.ejs") %>
