@@ -4,9 +4,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const session = require("express-session");                       //Passport
-const passport = require("passport");                             //Passport
-const passportLocalMongoose = require("passport-local-mongoose");  //Passport
+const session = require("express-session");                         //Passport
+const passport = require("passport");                               //Passport
+const passportLocalMongoose = require("passport-local-mongoose");   //Passport
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require("mongoose-findorcreate");
 const { Configuration, OpenAIApi } = require("openai");
@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(session({                                             //Passport
-  secret: "Our little secret.",
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false
 }))
