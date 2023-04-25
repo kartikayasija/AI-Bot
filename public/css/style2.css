@@ -528,3 +528,13 @@ label input[type="checkbox"] {
     animation: glow 1s ease-in-out infinite alternate;
     text-shadow: 0 0 1px #fff, 0 0 1px #ffff, 0 0 1px #c9c7c7, 0 0 1px #ffffff;
 }
+
+.btn{
+    background-color: blueviolet;
+    border: none;
+    transition: 0.3s ease all;
+}
+.btn:hover{
+    background-color: blueviolet;
+    opacity: 0.5;
+}
