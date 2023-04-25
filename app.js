@@ -91,7 +91,7 @@ app.get("/", function (req, res) {
     res.render("pre.ejs", { name: req.user.name });
   }
   else {
-    res.redirect("/login");
+    res.redirect("./login");
   }
 })
 
