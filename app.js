@@ -27,7 +27,11 @@ app.use(passport.session());                                   //Passport
 
 
 //connect MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/AI-BOT");
+mongoose.connect(process.env.MONGODB).then(()=>{
+  console.log("connnected")
+}).catch((err)=>{
+  console.log(err);
+})
 
 const userSchema = new mongoose.Schema({                  //User Schema
   name: String, 
@@ -213,6 +217,6 @@ app.post("/login", function (req, res) {
 
 
 // Listen at PORT 3000
-app.listen(3000, function () {
+app.listen(process.env.PORT, function () {
   console.log("Started!");
 })
