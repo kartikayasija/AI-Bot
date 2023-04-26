@@ -67,7 +67,7 @@ passport.deserializeUser(function (user, cb) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/chat"
+  callbackURL: "https://ai-bot-80wr.onrender.com/auth/google/chat"
 },
 function(accessToken, refreshToken, profile, cb) {
   User.findOrCreate({username: profile.id,googleId: profile.id,name: profile.displayName}, function (err, user) {
