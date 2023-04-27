@@ -14,6 +14,7 @@ const { Configuration, OpenAIApi } = require("openai");
 
 // use Packages
 const app = express();
+app.set('views', './views')
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -68,6 +69,7 @@ passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
   callbackURL: "https://ai-bot-80wr.onrender.com/auth/google/chat"
+  // callbackURL: "http://localhost:3000/auth/google/chat"
 },
 function(accessToken, refreshToken, profile, cb) {
   User.findOrCreate({username: profile.id,googleId: profile.id,name: profile.displayName}, function (err, user) {
