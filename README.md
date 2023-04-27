@@ -1,6 +1,6 @@
 # AI-BOT
 
-### TechStack Use
+## TechStack Use
 
 `Node.js`
 `Express.js`
@@ -9,7 +9,7 @@
 `CSS`
 
 
-### Project Initialization
+## Project Initialization
 
 - Download node package From [nodejs.org](https://nodejs.org/en/download/)
 
